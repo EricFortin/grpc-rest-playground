@@ -1,0 +1,66 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "service.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/example/echo": {
+      "post": {
+        "summary": "Sends a greeting",
+        "operationId": "SayHello",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/exampleHelloReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/exampleHelloRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "exampleHelloReply": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "The response message containing the greetings"
+    },
+    "exampleHelloRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "description": "The request message containing the user's name."
+    }
+  }
+}
